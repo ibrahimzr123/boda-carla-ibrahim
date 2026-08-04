@@ -40,7 +40,7 @@
       line-height: 1.3;
     }
 
-    /* ESTILO BASE PARA TODAS LAS SECCIONES */
+    /* FONDO GENERAL PARA TODAS LAS SECCIONES (fondo0.png) */
     .card {
       min-height: 100vh;
       width: 100%;
@@ -52,21 +52,15 @@
       text-align: center;
       position: relative;
       border-bottom: 1px solid #f0e6d8;
+      background-image: url('fondo0.png?v=9');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
     }
 
-    /* ASIGNACIÓN INDIVIDUAL DE FONDOS CON FORZADO DE CACHÉ (?v=7) */
-    #inicio     { background-image: url('fondo1.png?v=7'); }
-    #contador   { background-image: url('fondo1.png?v=7'); }
-    #ubicacion  { background-image: url('fondo1.png?v=7'); }
-    #horario    { background-image: url('fondo1.png?v=7'); }
-    #asistencia { background-image: url('fondo1.png?v=7'); }
-    #alergias   { background-image: url('fondo1.png?v=7'); }
-    #ninos      { background-image: url('fondo1.png?v=7'); }
-    #regalo     { background-image: url('fondo1.png?v=7'); }
-    #gracias    { background-image: url('fondo9.png?v=7'); }
+    /* SOLO SOBRESCRIBIMOS LA SECCIÓN 1 Y LA SECCIÓN 9 */
+    #inicio  { background-image: url('fondo1.png?v=9') !important; }
+    #gracias { background-image: url('fondo9.png?v=9') !important; }
 
     /* BLOQUE CONTENEDOR CENTRAL */
     .content-block {
@@ -268,7 +262,7 @@
 </head>
 <body>
 
-  <!-- HOJA 1: PORTADA -->
+  <!-- HOJA 1: PORTADA (fondo1.png) -->
   <section class="card" id="inicio">
     <div style="width: 100%; margin-top: 10px;">
       <h2>Nos Casamos</h2>
@@ -285,7 +279,7 @@
     </div>
   </section>
 
-  <!-- HOJA 2: CUENTA ATRÁS -->
+  <!-- HOJA 2: CUENTA ATRÁS (fondo0.png) -->
   <section class="card" id="contador">
     <div></div>
     <div class="content-block">
@@ -303,7 +297,7 @@
     <div></div>
   </section>
 
-  <!-- HOJA 3: UBICACIÓN -->
+  <!-- HOJA 3: UBICACIÓN (fondo0.png) -->
   <section class="card" id="ubicacion">
     <div></div>
     <div class="content-block">
@@ -316,7 +310,7 @@
     <div></div>
   </section>
 
-  <!-- HOJA 4: HORARIO -->
+  <!-- HOJA 4: HORARIO (fondo0.png) -->
   <section class="card" id="horario">
     <div></div>
     <div class="content-block">
@@ -336,7 +330,7 @@
   <!-- FORMULARIO PRINCIPAL -->
   <form id="weddingForm" action="AQUI_TU_URL_DE_GOOGLE_FORMS" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
 
-    <!-- HOJA 5: CONFIRMA TU ASISTENCIA -->
+    <!-- HOJA 5: CONFIRMA TU ASISTENCIA (fondo0.png) -->
     <section class="card" id="asistencia">
       <div></div>
       <div class="content-block">
@@ -365,7 +359,7 @@
       <div></div>
     </section>
 
-    <!-- HOJA 6: ALERGIAS Y RESTRICCIONES -->
+    <!-- HOJA 6: ALERGIAS Y RESTRICCIONES (fondo0.png) -->
     <section class="card" id="alergias">
       <div></div>
       <div class="content-block">
@@ -386,7 +380,7 @@
       <div></div>
     </section>
 
-    <!-- HOJA 7: PEQUEÑOS INVITADOS -->
+    <!-- HOJA 7: PEQUEÑOS INVITADOS (fondo0.png) -->
     <section class="card" id="ninos">
       <div></div>
       <div class="content-block">
@@ -421,7 +415,7 @@
 
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('¡Muchas gracias! Tu respuesta ha sido registrada.');}"></iframe>
 
-  <!-- HOJA 8: REGALO / CUENTA BANCARIA -->
+  <!-- HOJA 8: REGALO / CUENTA BANCARIA (fondo0.png) -->
   <section class="card" id="regalo">
     <div></div>
     <div class="content-block">
@@ -434,7 +428,7 @@
     <div></div>
   </section>
 
-  <!-- HOJA 9: AGRADECIMIENTO -->
+  <!-- HOJA 9: AGRADECIMIENTO (fondo9.png) -->
   <section class="card" id="gracias">
     <div></div>
     <div class="content-block">
