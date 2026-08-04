@@ -10,49 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-  <style>/* Configuración de imágenes de fondo para cada tarjeta */
-#inicio {
-  background-image: url('fondo1.png');
-}
-#contador {
-  background-image: url('fondo2.png');
-}
-#ubicacion {
-  background-image: url('fondo3.png');
-}
-#horario {
-  background-image: url('fondo4.png');
-}
-#asistencia {
-  background-image: url('fondo5.png');
-}
-#alergias {
-  background-image: url('fondo6.png');
-}
-#ninos {
-  background-image: url('fondo7.png');
-}
-#regalo {
-  background-image: url('fondo8.png');
-}
-#gracias {
-  background-image: url('fondo9.png');
-}
-
-/* Regla común para ajustar las imágenes de fondo perfectamente al móvil */
-.card {
-  background-size: cover;          /* Cubre todo el espacio sin deformarse */
-  background-position: center;     /* Centra la imagen */
-  background-repeat: no-repeat;    /* Evita que la imagen se repita */
-}    /* VARIABLES DE DISEÑO (Colores idénticos a la imagen) */
+  <style>
+    /* VARIABLES DE COLOR */
     :root {
-      --bg-color: #fcf8f2;
-      --card-bg: #f7f0e6;
       --accent-color: #c4a482;
       --accent-hover: #b3916e;
       --text-color: #5a524c;
       --text-light: #7e756d;
-      --border-color: #e8dbc slide;
       --border-input: #e0d0be;
     }
 
@@ -64,17 +28,17 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg-color);
+      background-color: #fcf8f2;
       color: var(--text-color);
-      max-width: 480px; /* Formato optimizado para móvil */
+      max-width: 480px; /* Tamaño optimizado para teléfono móvil */
       margin: 0 auto;
-      padding-bottom: 70px; /* Espacio para la barra inferior */
+      padding-bottom: 70px;
     }
 
-    /* SECCIONES / PÁGINAS */
+    /* CONFIGURACIÓN DE CADA HOJA / SECCIÓN CON SU FONDO */
     .card {
       min-height: 100vh;
-      padding: 40px 24px;
+      padding: 60px 24px 80px 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -82,12 +46,29 @@
       text-align: center;
       position: relative;
       border-bottom: 1px solid #f0e6d8;
+
+      /* Ajuste de imágenes de fondo */
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    /* TITULOS Y FUENTES */
+    /* ASIGNACIÓN DE LAS 9 IMÁGENES DE FONDO */
+    /* (Si tus archivos son .jpg cambia .png por .jpg) */
+    #inicio     { background-image: url('fondo1.png'); }
+    #contador   { background-image: url('fondo2.png'); }
+    #ubicacion  { background-image: url('fondo3.png'); }
+    #horario    { background-image: url('fondo4.png'); }
+    #asistencia { background-image: url('fondo5.png'); }
+    #alergias   { background-image: url('fondo6.png'); }
+    #ninos      { background-image: url('fondo7.png'); }
+    #regalo     { background-image: url('fondo8.png'); }
+    #gracias    { background-image: url('fondo9.png'); }
+
+    /* FUENTES Y TÍTULOS */
     h1 {
       font-family: 'Alex Brush', cursive;
-      font-size: 3.5rem;
+      font-size: 3.2rem;
       font-weight: normal;
       color: #4a443f;
       margin: 10px 0;
@@ -95,33 +76,32 @@
 
     h2 {
       font-family: 'Alex Brush', cursive;
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: normal;
       color: #5c524a;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .sub-title {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text-light);
       margin-bottom: 20px;
       line-height: 1.5;
     }
 
-    /* DETALLES DECORATIVOS (Corazón entre líneas) */
     .divider {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin: 10px 0 20px 0;
+      margin: 8px 0 16px 0;
       color: var(--accent-color);
       font-size: 0.8rem;
     }
     .divider::before, .divider::after {
       content: "";
       height: 1px;
-      width: 40px;
+      width: 35px;
       background-color: var(--accent-color);
     }
 
@@ -131,65 +111,68 @@
       gap: 8px;
       justify-content: center;
       width: 100%;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     .timer-box {
-      background: white;
+      background: rgba(255, 255, 255, 0.85);
       border: 1px solid var(--border-input);
       border-radius: 6px;
-      padding: 10px 5px;
+      padding: 8px 4px;
       flex: 1;
     }
     .timer-number {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 500;
-      color: #4a443f;
     }
     .timer-label {
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       color: var(--text-light);
-      margin-top: 4px;
-      letter-spacing: 1px;
+      margin-top: 2px;
     }
 
-    /* CRONOGRAMA / HORARIO */
+    /* HORARIO */
     .timeline {
       width: 100%;
-      max-width: 300px;
-      margin-top: 15px;
+      max-width: 280px;
+      margin-top: 10px;
       text-align: left;
     }
     .timeline-item {
       display: flex;
       align-items: center;
       gap: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .timeline-time {
       font-weight: 500;
-      font-size: 1.1rem;
-      min-width: 55px;
+      font-size: 1rem;
+      min-width: 50px;
     }
     .timeline-text {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-light);
     }
 
-    /* ESTILOS DE FORMULARIO CUADRADOS Y LIMPIOS */
+    /* FORMULARIOS Y CAJONES DE RESPUESTA */
     form {
       width: 100%;
+      max-width: 340px;
     }
+
     .form-group {
       width: 100%;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       text-align: left;
     }
+
     label {
       display: block;
-      font-size: 0.82rem;
-      color: var(--text-light);
-      margin-bottom: 6px;
+      font-size: 0.8rem;
+      color: var(--text-color);
+      font-weight: 500;
+      margin-bottom: 5px;
     }
+
     input[type="text"],
     input[type="number"],
     select,
@@ -198,45 +181,19 @@
       padding: 12px 14px;
       border: 1px solid var(--border-input);
       border-radius: 8px;
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 252, 248, 0.9);
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-color);
       outline: none;
-      transition: border 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
+
     input:focus, select:focus, textarea:focus {
       border-color: var(--accent-color);
       background-color: #ffffff;
     }
 
-    /* BOTONES DE SELECCIÓN RÁPIDA (SÍ/NO) */
-    .radio-group {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-    .radio-btn {
-      flex: 1;
-      padding: 12px;
-      border: 1px solid var(--border-input);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.7);
-      cursor: pointer;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: all 0.2s ease;
-    }
-    .radio-btn.selected {
-      border-color: var(--accent-color);
-      background-color: #f2e6d8;
-      font-weight: 500;
-    }
-
-    /* BOTÓN PRINCIPAL */
     .btn-submit, .btn-link {
       display: inline-block;
       width: 100%;
@@ -245,30 +202,27 @@
       color: white;
       border: none;
       border-radius: 20px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-family: 'Montserrat', sans-serif;
       text-decoration: none;
       cursor: pointer;
       margin-top: 10px;
-      transition: background 0.3s ease;
-    }
-    .btn-submit:hover, .btn-link:hover {
-      background-color: var(--accent-hover);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    /* CUENTA BANCARIA */
+    /* IBAN */
     .iban-box {
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.85);
       border: 1px dashed var(--accent-color);
-      padding: 15px;
+      padding: 12px;
       border-radius: 8px;
       font-weight: 500;
       letter-spacing: 1px;
       margin: 15px 0;
-      word-break: break-all;
+      font-size: 0.85rem;
     }
 
-    /* BARRA DE NAVEGACIÓN INFERIOR FIJA */
+    /* NAVEGACIÓN FIJA INFERIOR */
     .navbar {
       position: fixed;
       bottom: 0;
@@ -281,20 +235,20 @@
       display: flex;
       justify-content: space-around;
       padding: 8px 0;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid #e8dbc8;
       z-index: 1000;
     }
+
     .nav-item {
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       color: var(--text-light);
       text-decoration: none;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3px;
+      gap: 2px;
     }
-    .nav-item span { font-size: 1rem; }
   </style>
 </head>
 <body>
@@ -303,8 +257,6 @@
   <section class="card" id="inicio">
     <h2>Nos Casamos</h2>
     <div class="divider">♡</div>
-    <!-- Imagen de la pareja -->
-    <img src="https://via.placeholder.com/200x250" alt="Pareja" style="max-width:200px; margin: 15px 0;">
     <h1>Carla & Ibrahim</h1>
     <p style="font-size: 1.1rem; margin-top: 10px;">1 de Noviembre 2026</p>
     <p style="color: var(--text-light); font-size: 0.9rem;">Dolce Lola, Torre del Mar</p>
@@ -346,8 +298,7 @@
     </div>
   </section>
 
-  <!-- FORMULARIO PRINCIPAL (ASISTENCIA + ALERGIAS + NIÑOS) -->
-  <!-- Envía las respuestas directamente sin abrir la app de correo -->
+  <!-- FORMULARIO DE RESPUESTAS DIRECTO A GOOGLE FORMS -->
   <form id="weddingForm" action="AQUI_TU_URL_DE_GOOGLE_FORMS" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
 
     <!-- HOJA 5: CONFIRMA TU ASISTENCIA -->
@@ -383,20 +334,20 @@
 
       <div class="form-group">
         <label>Alergia o restricción</label>
-        <input type="text" name="entry.444444444" placeholder="Ej: Celíaco, vegetariano, alergia a frutos secos...">
+        <input type="text" name="entry.444444444" placeholder="Ej: Celíaco, vegetariano, fruto seco...">
       </div>
 
       <div class="form-group">
         <label>Comentarios adicionales (opcional)</label>
-        <textarea name="entry.555555555" rows="3" placeholder="Escribe aquí cualquier otra observación"></textarea>
+        <textarea name="entry.555555555" rows="3" placeholder="Escribe aquí cualquier observación"></textarea>
       </div>
     </section>
 
-    <!-- HOJA 7: PEQUEÑOS INVITADOS (NIÑOS) -->
+    <!-- HOJA 7: PEQUEÑOS INVITADOS -->
     <section class="card" id="ninos">
       <h2>Pequeños invitados</h2>
       <div class="divider">♡</div>
-      <p class="sub-title">Habrá una zona infantil con monitores y actividades. ¿Harán uso de ella?</p>
+      <p class="sub-title">Habrá una zona infantil con monitores y juegos. ¿Harán uso de ella?</p>
 
       <div class="form-group">
         <label>¿Harán uso de la zona infantil?</label>
@@ -409,7 +360,7 @@
       <div style="display: flex; gap: 10px; width: 100%;">
         <div class="form-group" style="flex: 2;">
           <label>Nombre del niño/a</label>
-          <input type="text" name="entry.777777777" placeholder="Escribe el nombre">
+          <input type="text" name="entry.777777777" placeholder="Nombre">
         </div>
         <div class="form-group" style="flex: 1;">
           <label>Edad</label>
@@ -417,12 +368,12 @@
         </div>
       </div>
 
-      <button type="submit" class="btn-submit" style="margin-top: 25px;">Enviar Confirmación</button>
+      <button type="submit" class="btn-submit" style="margin-top: 20px;">Enviar Confirmación</button>
     </section>
   </form>
 
-  <!-- Iframe oculto para procesar el envío sin recargar ni cambiar de página -->
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('¡Muchas gracias! Tu respuesta ha sido registrada correctamente.');}"></iframe>
+  <!-- Iframe oculto para procesar la respuesta en segundo plano -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('¡Muchas gracias! Tu respuesta ha sido registrada.');}"></iframe>
 
   <!-- HOJA 8: REGALO / CUENTA BANCARIA -->
   <section class="card" id="regalo">
@@ -438,11 +389,9 @@
     <h2>Gracias</h2>
     <div class="divider">♡</div>
     <p class="sub-title">Gracias por formar parte de este día tan especial para nosotros. ¡No podemos esperar para celebrarlo juntos!</p>
-    <!-- Imagen pareja final -->
-    <img src="https://via.placeholder.com/180x240" alt="Pareja espalda" style="max-width:180px; margin-top: 15px;">
   </section>
 
-  <!-- BARRA DE NAVEGACIÓN INFERIOR FIJA -->
+  <!-- BARRA DE NAVEGACIÓN FIJA INFERIOR -->
   <nav class="navbar">
     <a href="#inicio" class="nav-item"><span>🏠</span>Inicio</a>
     <a href="#asistencia" class="nav-item"><span>☑</span>Asistencia</a>
@@ -456,7 +405,7 @@
   <script>
     var submitted = false;
 
-    // Configura aquí la fecha de la boda (Año, Mes-1, Día) -> Mes 10 = Noviembre
+    // Fecha de la boda: 1 de Noviembre de 2026
     const weddingDate = new Date(2026, 10, 1, 13, 30, 0).getTime();
 
     const timer = setInterval(function() {
