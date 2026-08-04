@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carla & Ibrahim - Nuestra Boda</title>
+
+  <!-- Fuentes elegantes de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* VARIABLES DE DISEÑO (Colores idénticos a la imagen) */
+    :root {
+      --bg-color: #fcf8f2;
+      --card-bg: #f7f0e6;
+      --accent-color: #c4a482;
+      --accent-hover: #b3916e;
+      --text-color: #5a524c;
+      --text-light: #7e756d;
+      --border-color: #e8dbc slide;
+      --border-input: #e0d0be;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      max-width: 480px; /* Formato optimizado para móvil */
+      margin: 0 auto;
+      padding-bottom: 70px; /* Espacio para la barra inferior */
+    }
+
+    /* SECCIONES / PÁGINAS */
+    .card {
+      min-height: 100vh;
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      border-bottom: 1px solid #f0e6d8;
+    }
+
+    /* TITULOS Y FUENTES */
+    h1 {
+      font-family: 'Alex Brush', cursive;
+      font-size: 3.5rem;
+      font-weight: normal;
+      color: #4a443f;
+      margin: 10px 0;
+    }
+
+    h2 {
+      font-family: 'Alex Brush', cursive;
+      font-size: 2.8rem;
+      font-weight: normal;
+      color: #5c524a;
+      margin-bottom: 15px;
+    }
+
+    .sub-title {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    /* DETALLES DECORATIVOS (Corazón entre líneas) */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0 20px 0;
+      color: var(--accent-color);
+      font-size: 0.8rem;
+    }
+    .divider::before, .divider::after {
+      content: "";
+      height: 1px;
+      width: 40px;
+      background-color: var(--accent-color);
+    }
+
+    /* CUENTA ATRÁS */
+    .timer-container {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .timer-box {
+      background: white;
+      border: 1px solid var(--border-input);
+      border-radius: 6px;
+      padding: 10px 5px;
+      flex: 1;
+    }
+    .timer-number {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #4a443f;
+    }
+    .timer-label {
+      font-size: 0.65rem;
+      color: var(--text-light);
+      margin-top: 4px;
+      letter-spacing: 1px;
+    }
+
+    /* CRONOGRAMA / HORARIO */
+    .timeline {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 15px;
+      text-align: left;
+    }
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .timeline-time {
+      font-weight: 500;
+      font-size: 1.1rem;
+      min-width: 55px;
+    }
+    .timeline-text {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* ESTILOS DE FORMULARIO CUADRADOS Y LIMPIOS */
+    form {
+      width: 100%;
+    }
+    .form-group {
+      width: 100%;
+      margin-bottom: 18px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border-input);
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.7);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      outline: none;
+      transition: border 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent-color);
+      background-color: #ffffff;
+    }
+
+    /* BOTONES DE SELECCIÓN RÁPIDA (SÍ/NO) */
+    .radio-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .radio-btn {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid var(--border-input);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .radio-btn.selected {
+      border-color: var(--accent-color);
+      background-color: #f2e6d8;
+      font-weight: 500;
+    }
+
+    /* BOTÓN PRINCIPAL */
+    .btn-submit, .btn-link {
+      display: inline-block;
+      width: 100%;
+      padding: 12px 20px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-family: 'Montserrat', sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+    .btn-submit:hover, .btn-link:hover {
+      background-color: var(--accent-hover);
+    }
+
+    /* CUENTA BANCARIA */
+    .iban-box {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px dashed var(--accent-color);
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin: 15px 0;
+      word-break: break-all;
+    }
+
+    /* BARRA DE NAVEGACIÓN INFERIOR FIJA */
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background: rgba(252, 248, 242, 0.95);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0;
+      border-top: 1px solid var(--border-color);
+      z-index: 1000;
+    }
+    .nav-item {
+      font-size: 0.62rem;
+      color: var(--text-light);
+      text-decoration: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+    .nav-item span { font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- HOJA 1: PORTADA -->
+  <section class="card" id="inicio">
+    <h2>Nos Casamos</h2>
+    <div class="divider">♡</div>
+    <!-- Imagen de la pareja -->
+    <img src="https://via.placeholder.com/200x250" alt="Pareja" style="max-width:200px; margin: 15px 0;">
+    <h1>Carla & Ibrahim</h1>
+    <p style="font-size: 1.1rem; margin-top: 10px;">1 de Noviembre 2026</p>
+    <p style="color: var(--text-light); font-size: 0.9rem;">Dolce Lola, Torre del Mar</p>
+  </section>
+
+  <!-- HOJA 2: CUENTA ATRÁS -->
+  <section class="card" id="contador">
+    <h2>Falta muy poco...</h2>
+    <div class="divider">♡</div>
+    <p class="sub-title">Estamos contando los días para vivir el mejor día de nuestras vidas junto a las personas que más queremos.</p>
+    
+    <div class="timer-container">
+      <div class="timer-box"><div class="timer-number" id="days">00</div><div class="timer-label">DÍAS</div></div>
+      <div class="timer-box"><div class="timer-number" id="hours">00</div><div class="timer-label">HORAS</div></div>
+      <div class="timer-box"><div class="timer-number" id="minutes">00</div><div class="timer-label">MINUTOS</div></div>
+      <div class="timer-box"><div class="timer-number" id="seconds">00</div><div class="timer-label">SEGUNDOS</div></div>
+    </div>
+  </section>
+
+  <!-- HOJA 3: UBICACIÓN -->
+  <section class="card" id="ubicacion">
+    <h2>Ubicación</h2>
+    <div class="divider">♡</div>
+    <h3 style="font-weight: 400; font-size: 1.3rem; margin-bottom: 5px;">Dolce Lola</h3>
+    <p class="sub-title">Carretera de Almería, 45<br>29740 Torre del Mar, Málaga</p>
+    <a href="https://maps.google.com" target="_blank" class="btn-link" style="width: auto; padding: 10px 25px;">📍 Ver en Google Maps</a>
+  </section>
+
+  <!-- HOJA 4: HORARIO -->
+  <section class="card" id="horario">
+    <h2>Horario</h2>
+    <div class="divider">♡</div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-time">13:15</div><div class="timeline-text">Llegada de invitados</div></div>
+      <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-text">Comienzo ceremonia</div></div>
+      <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-text">Cóctel</div></div>
+      <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-text">Banquete</div></div>
+      <div class="timeline-item"><div class="timeline-time">18:30</div><div class="timeline-text">¡Fiesta hasta que el cuerpo aguante!</div></div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO PRINCIPAL (ASISTENCIA + ALERGIAS + NIÑOS) -->
+  <!-- Envía las respuestas directamente sin abrir la app de correo -->
+  <form id="weddingForm" action="AQUI_TU_URL_DE_GOOGLE_FORMS" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+
+    <!-- HOJA 5: CONFIRMA TU ASISTENCIA -->
+    <section class="card" id="asistencia">
+      <h2>Confirma tu asistencia</h2>
+      <div class="divider">♡</div>
+      <p class="sub-title">Tu confirmación es muy importante para nosotros.</p>
+
+      <div class="form-group">
+        <label>Nombre y Apellidos completos</label>
+        <input type="text" name="entry.111111111" required placeholder="Tu nombre completo">
+      </div>
+
+      <div class="form-group">
+        <label>¿Nos acompañarás?</label>
+        <select name="entry.222222222" required>
+          <option value="Sí, asistiré">Sí, asistiré ✓</option>
+          <option value="No podré asistir">No podré asistir ✕</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Número de asistentes (incluyéndote)</label>
+        <input type="number" min="1" max="10" value="1" name="entry.333333333" required>
+      </div>
+    </section>
+
+    <!-- HOJA 6: ALERGIAS Y RESTRICCIONES -->
+    <section class="card" id="alergias">
+      <h2>Alergias o restricciones</h2>
+      <div class="divider">♡</div>
+      <p class="sub-title">Cuéntanos si tienes alguna alergia o restricción para tenerlo en cuenta en el menú.</p>
+
+      <div class="form-group">
+        <label>Alergia o restricción</label>
+        <input type="text" name="entry.444444444" placeholder="Ej: Celíaco, vegetariano, alergia a frutos secos...">
+      </div>
+
+      <div class="form-group">
+        <label>Comentarios adicionales (opcional)</label>
+        <textarea name="entry.555555555" rows="3" placeholder="Escribe aquí cualquier otra observación"></textarea>
+      </div>
+    </section>
+
+    <!-- HOJA 7: PEQUEÑOS INVITADOS (NIÑOS) -->
+    <section class="card" id="ninos">
+      <h2>Pequeños invitados</h2>
+      <div class="divider">♡</div>
+      <p class="sub-title">Habrá una zona infantil con monitores y actividades. ¿Harán uso de ella?</p>
+
+      <div class="form-group">
+        <label>¿Harán uso de la zona infantil?</label>
+        <select name="entry.666666666">
+          <option value="No">No</option>
+          <option value="Sí">Sí, asistirán niños</option>
+        </select>
+      </div>
+
+      <div style="display: flex; gap: 10px; width: 100%;">
+        <div class="form-group" style="flex: 2;">
+          <label>Nombre del niño/a</label>
+          <input type="text" name="entry.777777777" placeholder="Escribe el nombre">
+        </div>
+        <div class="form-group" style="flex: 1;">
+          <label>Edad</label>
+          <input type="number" name="entry.888888888" placeholder="Ej: 5">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit" style="margin-top: 25px;">Enviar Confirmación</button>
+    </section>
+  </form>
+
+  <!-- Iframe oculto para procesar el envío sin recargar ni cambiar de página -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('¡Muchas gracias! Tu respuesta ha sido registrada correctamente.');}"></iframe>
+
+  <!-- HOJA 8: REGALO / CUENTA BANCARIA -->
+  <section class="card" id="regalo">
+    <h2>Luna de Miel</h2>
+    <div class="divider">♡</div>
+    <p class="sub-title">Lo más importante para nosotros es contar con vuestra presencia. Pero si queréis ayudarnos a irnos un poquito más lejos en nuestra luna de miel, aquí os dejamos nuestro número de cuenta:</p>
+    <div class="iban-box">ES05 0182 5332 1500 0012 9391</div>
+    <p style="font-weight: 500;">¡GRACIAS!</p>
+  </section>
+
+  <!-- HOJA 9: AGRADECIMIENTO -->
+  <section class="card" id="gracias">
+    <h2>Gracias</h2>
+    <div class="divider">♡</div>
+    <p class="sub-title">Gracias por formar parte de este día tan especial para nosotros. ¡No podemos esperar para celebrarlo juntos!</p>
+    <!-- Imagen pareja final -->
+    <img src="https://via.placeholder.com/180x240" alt="Pareja espalda" style="max-width:180px; margin-top: 15px;">
+  </section>
+
+  <!-- BARRA DE NAVEGACIÓN INFERIOR FIJA -->
+  <nav class="navbar">
+    <a href="#inicio" class="nav-item"><span>🏠</span>Inicio</a>
+    <a href="#asistencia" class="nav-item"><span>☑</span>Asistencia</a>
+    <a href="#alergias" class="nav-item"><span>🌾</span>Alergias</a>
+    <a href="#ninos" class="nav-item"><span>👶</span>Niños</a>
+    <a href="#horario" class="nav-item"><span>🕒</span>Horario</a>
+    <a href="#regalo" class="nav-item"><span>🎁</span>Regalo</a>
+  </nav>
+
+  <!-- SCRIPT CUENTA ATRÁS -->
+  <script>
+    var submitted = false;
+
+    // Configura aquí la fecha de la boda (Año, Mes-1, Día) -> Mes 10 = Noviembre
+    const weddingDate = new Date(2026, 10, 1, 13, 30, 0).getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        return;
+      }
+
+      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+    }, 1000);
+  </script>
+</body>
+</html>
