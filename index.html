@@ -10,8 +10,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-  <style>
-    /* VARIABLES DE DISEÑO (Colores idénticos a la imagen) */
+  <style>/* Configuración de imágenes de fondo para cada tarjeta */
+#inicio {
+  background-image: url('fondo1.png');
+}
+#contador {
+  background-image: url('fondo2.png');
+}
+#ubicacion {
+  background-image: url('fondo3.png');
+}
+#horario {
+  background-image: url('fondo4.png');
+}
+#asistencia {
+  background-image: url('fondo5.png');
+}
+#alergias {
+  background-image: url('fondo6.png');
+}
+#ninos {
+  background-image: url('fondo7.png');
+}
+#regalo {
+  background-image: url('fondo8.png');
+}
+#gracias {
+  background-image: url('fondo9.png');
+}
+
+/* Regla común para ajustar las imágenes de fondo perfectamente al móvil */
+.card {
+  background-size: cover;          /* Cubre todo el espacio sin deformarse */
+  background-position: center;     /* Centra la imagen */
+  background-repeat: no-repeat;    /* Evita que la imagen se repita */
+}    /* VARIABLES DE DISEÑO (Colores idénticos a la imagen) */
     :root {
       --bg-color: #fcf8f2;
       --card-bg: #f7f0e6;
