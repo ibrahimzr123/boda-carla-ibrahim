@@ -38,7 +38,7 @@
       padding-bottom: 70px;
     }
 
-    /* TARJETAS / SECCIONES CON EL MISMO FONDO */
+    /* ESTILO BASE PARA TODAS LAS SECCIONES */
     .card {
       min-height: 100vh;
       width: 100%;
@@ -51,12 +51,16 @@
       position: relative;
       border-bottom: 1px solid #f0e6d8;
 
-      /* IMAGEN ÚNICA PARA TODAS LAS SECCIONES */
-      background-image: url('fondo1.png?v=4');
+      /* FONDO BASE PARA LAS SECCIONES INTERMEDIAS */
+      background-image: url('fondo1.png?v=5');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
     }
+
+    /* FONDOS ESPECÍFICOS PARA PORTADA (1) Y AGRADECIMIENTO (9) */
+    #inicio  { background-image: url('fondo1.png?v=5'); }
+    #gracias { background-image: url('fondo9.png?v=5'); }
 
     /* BLOQUE CONTENEDOR CENTRAL */
     .content-block {
@@ -250,20 +254,17 @@
 </head>
 <body>
 
-  <!-- HOJA 1: PORTADA REORGANIZADA -->
+  <!-- HOJA 1: PORTADA (CON FONDO 1) -->
   <section class="card" id="inicio">
-    <!-- ARRIBA DEL TODO -->
     <div style="width: 100%; margin-top: 10px;">
       <h2>Nos Casamos</h2>
       <div class="divider">♡</div>
     </div>
 
-    <!-- CENTRO -->
     <div class="content-block">
       <h1>Carla & Ibrahim</h1>
     </div>
 
-    <!-- ABAJO DEL TODO -->
     <div style="width: 100%; margin-bottom: 10px;">
       <p style="font-size: 1.1rem; font-weight: 500; color: var(--text-color);">1 de Noviembre 2026</p>
       <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 4px;">Dolce Lola, Torre del Mar</p>
@@ -419,7 +420,7 @@
     <div></div>
   </section>
 
-  <!-- HOJA 9: AGRADECIMIENTO -->
+  <!-- HOJA 9: AGRADECIMIENTO (CON FONDO 9) -->
   <section class="card" id="gracias">
     <div></div>
     <div class="content-block">
