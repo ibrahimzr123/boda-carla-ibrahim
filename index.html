@@ -32,7 +32,7 @@
 
     body {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 24px; /* Tamaño general texto normal (22px-26px) */
+      font-size: 24px;
       color: var(--text-color);
       max-width: 480px;
       margin: 0 auto;
@@ -52,17 +52,21 @@
       text-align: center;
       position: relative;
       border-bottom: 1px solid #f0e6d8;
-
-      /* FONDO BASE PARA LAS SECCIONES INTERMEDIAS */
-      background-image: url('fondo1.png?v=6');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
     }
 
-    /* FONDOS ESPECÍFICOS PARA PORTADA (1) Y AGRADECIMIENTO (9) */
-    #inicio  { background-image: url('fondo1.png?v=6'); }
-    #gracias { background-image: url('fondo9.png?v=6'); }
+    /* ASIGNACIÓN INDIVIDUAL DE FONDOS CON FORZADO DE CACHÉ (?v=7) */
+    #inicio     { background-image: url('fondo1.png?v=7'); }
+    #contador   { background-image: url('fondo1.png?v=7'); }
+    #ubicacion  { background-image: url('fondo1.png?v=7'); }
+    #horario    { background-image: url('fondo1.png?v=7'); }
+    #asistencia { background-image: url('fondo1.png?v=7'); }
+    #alergias   { background-image: url('fondo1.png?v=7'); }
+    #ninos      { background-image: url('fondo1.png?v=7'); }
+    #regalo     { background-image: url('fondo1.png?v=7'); }
+    #gracias    { background-image: url('fondo9.png?v=7'); }
 
     /* BLOQUE CONTENEDOR CENTRAL */
     .content-block {
@@ -95,7 +99,7 @@
     label,
     .nav-item {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 19px; /* Tamaño texto pequeño (18px-20px) */
+      font-size: 19px;
       color: var(--text-light);
       line-height: 1.3;
     }
