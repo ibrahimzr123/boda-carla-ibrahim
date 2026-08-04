@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carla & Ibrahim - Nuestra Boda</title>
 
-  <!-- Fuentes elegantes de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
   <style>
-    /* VARIABLES DE COLOR */
     :root {
       --accent-color: #c4a482;
       --accent-hover: #b3916e;
@@ -26,35 +24,40 @@
       padding: 0;
     }
 
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: #fcf8f2;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #fcf8f2;
       color: var(--text-color);
-      max-width: 480px; /* Tamaño optimizado para teléfono móvil */
+      max-width: 480px;
       margin: 0 auto;
       padding-bottom: 70px;
     }
 
-    /* CONFIGURACIÓN DE CADA HOJA / SECCIÓN CON SU FONDO */
+    /* TARJETAS/SECCIONES PERFECTAMENTE ENCUADRADAS */
     .card {
       min-height: 100vh;
-      padding: 60px 24px 80px 24px;
+      width: 100%;
+      padding: 50px 20px 80px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between; /* Reparte el espacio verticalmente */
       text-align: center;
       position: relative;
       border-bottom: 1px solid #f0e6d8;
 
-      /* Ajuste de imágenes de fondo */
-      background-size: 100% 100%;
-      background-position: center;
+      /* AJUSTE PROFESIONAL DE FONDO (Sin deformar) */
+      background-size: cover;
+      background-position: center top;
       background-repeat: no-repeat;
     }
 
-    /* ASIGNACIÓN DE LAS 9 IMÁGENES DE FONDO */
-    /* (Si tus archivos son .jpg cambia .png por .jpg) */
+    /* ASIGNACIÓN DE LAS 9 IMÁGENES */
     #inicio     { background-image: url('fondo1.png'); }
     #contador   { background-image: url('fondo2.png'); }
     #ubicacion  { background-image: url('fondo3.png'); }
@@ -65,28 +68,35 @@
     #regalo     { background-image: url('fondo8.png'); }
     #gracias    { background-image: url('fondo9.png'); }
 
+    /* BLOQUE CONTENEDOR PARA CENTRAR TEXTOS Y FORMULARIOS */
+    .content-block {
+      width: 100%;
+      max-width: 320px;
+      margin: auto 0; /* Centrado vertical automático */
+    }
+
     /* FUENTES Y TÍTULOS */
     h1 {
       font-family: 'Alex Brush', cursive;
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: normal;
       color: #4a443f;
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
     h2 {
       font-family: 'Alex Brush', cursive;
-      font-size: 2.6rem;
+      font-size: 2.5rem;
       font-weight: normal;
       color: #5c524a;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .sub-title {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-light);
-      margin-bottom: 20px;
-      line-height: 1.5;
+      margin-bottom: 15px;
+      line-height: 1.4;
     }
 
     .divider {
@@ -94,38 +104,38 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin: 8px 0 16px 0;
+      margin: 5px 0 12px 0;
       color: var(--accent-color);
       font-size: 0.8rem;
     }
     .divider::before, .divider::after {
       content: "";
       height: 1px;
-      width: 35px;
+      width: 30px;
       background-color: var(--accent-color);
     }
 
     /* CUENTA ATRÁS */
     .timer-container {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       justify-content: center;
       width: 100%;
-      margin-top: 15px;
+      margin-top: 10px;
     }
     .timer-box {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid var(--border-input);
-      border-radius: 6px;
-      padding: 8px 4px;
+      border-radius: 8px;
+      padding: 8px 2px;
       flex: 1;
     }
     .timer-number {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 500;
     }
     .timer-label {
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       color: var(--text-light);
       margin-top: 2px;
     }
@@ -133,44 +143,42 @@
     /* HORARIO */
     .timeline {
       width: 100%;
-      max-width: 280px;
-      margin-top: 10px;
+      margin-top: 5px;
       text-align: left;
     }
     .timeline-item {
       display: flex;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 16px;
+      gap: 12px;
+      margin-bottom: 14px;
     }
     .timeline-time {
       font-weight: 500;
-      font-size: 1rem;
-      min-width: 50px;
+      font-size: 0.95rem;
+      min-width: 48px;
     }
     .timeline-text {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-light);
     }
 
-    /* FORMULARIOS Y CAJONES DE RESPUESTA */
+    /* CAJONES DE FORMULARIO BIEN ENCUADRADOS */
     form {
       width: 100%;
-      max-width: 340px;
     }
 
     .form-group {
       width: 100%;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       text-align: left;
     }
 
     label {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-color);
       font-weight: 500;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     input[type="text"],
@@ -178,15 +186,15 @@
     select,
     textarea {
       width: 100%;
-      padding: 12px 14px;
+      padding: 10px 12px;
       border: 1px solid var(--border-input);
       border-radius: 8px;
-      background-color: rgba(255, 252, 248, 0.9);
+      background-color: rgba(255, 252, 248, 0.92);
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--text-color);
       outline: none;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     }
 
     input:focus, select:focus, textarea:focus {
@@ -197,29 +205,28 @@
     .btn-submit, .btn-link {
       display: inline-block;
       width: 100%;
-      padding: 12px 20px;
+      padding: 11px 18px;
       background-color: var(--accent-color);
       color: white;
       border: none;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-family: 'Montserrat', sans-serif;
       text-decoration: none;
       cursor: pointer;
-      margin-top: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 8px;
     }
 
     /* IBAN */
     .iban-box {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px dashed var(--accent-color);
-      padding: 12px;
+      padding: 10px;
       border-radius: 8px;
       font-weight: 500;
-      letter-spacing: 1px;
-      margin: 15px 0;
-      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      margin: 12px 0;
+      font-size: 0.82rem;
     }
 
     /* NAVEGACIÓN FIJA INFERIOR */
@@ -240,7 +247,7 @@
     }
 
     .nav-item {
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       color: var(--text-light);
       text-decoration: none;
       text-align: center;
@@ -255,140 +262,175 @@
 
   <!-- HOJA 1: PORTADA -->
   <section class="card" id="inicio">
-    <h2>Nos Casamos</h2>
-    <div class="divider">♡</div>
-    <h1>Carla & Ibrahim</h1>
-    <p style="font-size: 1.1rem; margin-top: 10px;">1 de Noviembre 2026</p>
-    <p style="color: var(--text-light); font-size: 0.9rem;">Dolce Lola, Torre del Mar</p>
+    <div></div>
+    <div class="content-block">
+      <h2>Nos Casamos</h2>
+      <div class="divider">♡</div>
+      <h1>Carla & Ibrahim</h1>
+      <p style="font-size: 1rem; margin-top: 8px;">1 de Noviembre 2026</p>
+      <p style="color: var(--text-light); font-size: 0.85rem;">Dolce Lola, Torre del Mar</p>
+    </div>
+    <div></div>
   </section>
 
   <!-- HOJA 2: CUENTA ATRÁS -->
   <section class="card" id="contador">
-    <h2>Falta muy poco...</h2>
-    <div class="divider">♡</div>
-    <p class="sub-title">Estamos contando los días para vivir el mejor día de nuestras vidas junto a las personas que más queremos.</p>
-    
-    <div class="timer-container">
-      <div class="timer-box"><div class="timer-number" id="days">00</div><div class="timer-label">DÍAS</div></div>
-      <div class="timer-box"><div class="timer-number" id="hours">00</div><div class="timer-label">HORAS</div></div>
-      <div class="timer-box"><div class="timer-number" id="minutes">00</div><div class="timer-label">MINUTOS</div></div>
-      <div class="timer-box"><div class="timer-number" id="seconds">00</div><div class="timer-label">SEGUNDOS</div></div>
+    <div></div>
+    <div class="content-block">
+      <h2>Falta muy poco...</h2>
+      <div class="divider">♡</div>
+      <p class="sub-title">Estamos contando los días para vivir el mejor día de nuestras vidas junto a las personas que más queremos.</p>
+      
+      <div class="timer-container">
+        <div class="timer-box"><div class="timer-number" id="days">00</div><div class="timer-label">DÍAS</div></div>
+        <div class="timer-box"><div class="timer-number" id="hours">00</div><div class="timer-label">HORAS</div></div>
+        <div class="timer-box"><div class="timer-number" id="minutes">00</div><div class="timer-label">MINUTOS</div></div>
+        <div class="timer-box"><div class="timer-number" id="seconds">00</div><div class="timer-label">SEGUNDOS</div></div>
+      </div>
     </div>
+    <div></div>
   </section>
 
   <!-- HOJA 3: UBICACIÓN -->
   <section class="card" id="ubicacion">
-    <h2>Ubicación</h2>
-    <div class="divider">♡</div>
-    <h3 style="font-weight: 400; font-size: 1.3rem; margin-bottom: 5px;">Dolce Lola</h3>
-    <p class="sub-title">Carretera de Almería, 45<br>29740 Torre del Mar, Málaga</p>
-    <a href="https://maps.google.com" target="_blank" class="btn-link" style="width: auto; padding: 10px 25px;">📍 Ver en Google Maps</a>
+    <div></div>
+    <div class="content-block">
+      <h2>Ubicación</h2>
+      <div class="divider">♡</div>
+      <h3 style="font-weight: 400; font-size: 1.2rem; margin-bottom: 5px;">Dolce Lola</h3>
+      <p class="sub-title">Carretera de Almería, 45<br>29740 Torre del Mar, Málaga</p>
+      <a href="https://maps.google.com" target="_blank" class="btn-link" style="width: auto; padding: 10px 20px;">📍 Ver en Google Maps</a>
+    </div>
+    <div></div>
   </section>
 
   <!-- HOJA 4: HORARIO -->
   <section class="card" id="horario">
-    <h2>Horario</h2>
-    <div class="divider">♡</div>
-    <div class="timeline">
-      <div class="timeline-item"><div class="timeline-time">13:15</div><div class="timeline-text">Llegada de invitados</div></div>
-      <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-text">Comienzo ceremonia</div></div>
-      <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-text">Cóctel</div></div>
-      <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-text">Banquete</div></div>
-      <div class="timeline-item"><div class="timeline-time">18:30</div><div class="timeline-text">¡Fiesta hasta que el cuerpo aguante!</div></div>
+    <div></div>
+    <div class="content-block">
+      <h2>Horario</h2>
+      <div class="divider">♡</div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-time">13:15</div><div class="timeline-text">Llegada de invitados</div></div>
+        <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-text">Comienzo ceremonia</div></div>
+        <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-text">Cóctel</div></div>
+        <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-text">Banquete</div></div>
+        <div class="timeline-item"><div class="timeline-time">18:30</div><div class="timeline-text">¡Fiesta hasta que el cuerpo aguante!</div></div>
+      </div>
     </div>
+    <div></div>
   </section>
 
-  <!-- FORMULARIO DE RESPUESTAS DIRECTO A GOOGLE FORMS -->
+  <!-- FORMULARIO PRINCIPAL -->
   <form id="weddingForm" action="AQUI_TU_URL_DE_GOOGLE_FORMS" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
 
     <!-- HOJA 5: CONFIRMA TU ASISTENCIA -->
     <section class="card" id="asistencia">
-      <h2>Confirma tu asistencia</h2>
-      <div class="divider">♡</div>
-      <p class="sub-title">Tu confirmación es muy importante para nosotros.</p>
+      <div></div>
+      <div class="content-block">
+        <h2>Confirma tu asistencia</h2>
+        <div class="divider">♡</div>
+        <p class="sub-title">Tu confirmación es muy importante para nosotros.</p>
 
-      <div class="form-group">
-        <label>Nombre y Apellidos completos</label>
-        <input type="text" name="entry.111111111" required placeholder="Tu nombre completo">
-      </div>
+        <div class="form-group">
+          <label>Nombre y Apellidos completos</label>
+          <input type="text" name="entry.111111111" required placeholder="Tu nombre completo">
+        </div>
 
-      <div class="form-group">
-        <label>¿Nos acompañarás?</label>
-        <select name="entry.222222222" required>
-          <option value="Sí, asistiré">Sí, asistiré ✓</option>
-          <option value="No podré asistir">No podré asistir ✕</option>
-        </select>
-      </div>
+        <div class="form-group">
+          <label>¿Nos acompañarás?</label>
+          <select name="entry.222222222" required>
+            <option value="Sí, asistiré">Sí, asistiré ✓</option>
+            <option value="No podré asistir">No podré asistir ✕</option>
+          </select>
+        </div>
 
-      <div class="form-group">
-        <label>Número de asistentes (incluyéndote)</label>
-        <input type="number" min="1" max="10" value="1" name="entry.333333333" required>
+        <div class="form-group">
+          <label>Número de asistentes (incluyéndote)</label>
+          <input type="number" min="1" max="10" value="1" name="entry.333333333" required>
+        </div>
       </div>
+      <div></div>
     </section>
 
     <!-- HOJA 6: ALERGIAS Y RESTRICCIONES -->
     <section class="card" id="alergias">
-      <h2>Alergias o restricciones</h2>
-      <div class="divider">♡</div>
-      <p class="sub-title">Cuéntanos si tienes alguna alergia o restricción para tenerlo en cuenta en el menú.</p>
+      <div></div>
+      <div class="content-block">
+        <h2>Alergias o restricciones</h2>
+        <div class="divider">♡</div>
+        <p class="sub-title">Cuéntanos si tienes alguna alergia o restricción para tenerlo en cuenta en el menú.</p>
 
-      <div class="form-group">
-        <label>Alergia o restricción</label>
-        <input type="text" name="entry.444444444" placeholder="Ej: Celíaco, vegetariano, fruto seco...">
-      </div>
+        <div class="form-group">
+          <label>Alergia o restricción</label>
+          <input type="text" name="entry.444444444" placeholder="Ej: Celíaco, vegetariano...">
+        </div>
 
-      <div class="form-group">
-        <label>Comentarios adicionales (opcional)</label>
-        <textarea name="entry.555555555" rows="3" placeholder="Escribe aquí cualquier observación"></textarea>
+        <div class="form-group">
+          <label>Comentarios adicionales (opcional)</label>
+          <textarea name="entry.555555555" rows="2" placeholder="Escribe aquí cualquier observación"></textarea>
+        </div>
       </div>
+      <div></div>
     </section>
 
     <!-- HOJA 7: PEQUEÑOS INVITADOS -->
     <section class="card" id="ninos">
-      <h2>Pequeños invitados</h2>
-      <div class="divider">♡</div>
-      <p class="sub-title">Habrá una zona infantil con monitores y juegos. ¿Harán uso de ella?</p>
+      <div></div>
+      <div class="content-block">
+        <h2>Pequeños invitados</h2>
+        <div class="divider">♡</div>
+        <p class="sub-title">Habrá una zona infantil con monitores y juegos. ¿Harán uso de ella?</p>
 
-      <div class="form-group">
-        <label>¿Harán uso de la zona infantil?</label>
-        <select name="entry.666666666">
-          <option value="No">No</option>
-          <option value="Sí">Sí, asistirán niños</option>
-        </select>
-      </div>
-
-      <div style="display: flex; gap: 10px; width: 100%;">
-        <div class="form-group" style="flex: 2;">
-          <label>Nombre del niño/a</label>
-          <input type="text" name="entry.777777777" placeholder="Nombre">
+        <div class="form-group">
+          <label>¿Harán uso de la zona infantil?</label>
+          <select name="entry.666666666">
+            <option value="No">No</option>
+            <option value="Sí">Sí, asistirán niños</option>
+          </select>
         </div>
-        <div class="form-group" style="flex: 1;">
-          <label>Edad</label>
-          <input type="number" name="entry.888888888" placeholder="Ej: 5">
-        </div>
-      </div>
 
-      <button type="submit" class="btn-submit" style="margin-top: 20px;">Enviar Confirmación</button>
+        <div style="display: flex; gap: 8px; width: 100%;">
+          <div class="form-group" style="flex: 2;">
+            <label>Nombre del niño/a</label>
+            <input type="text" name="entry.777777777" placeholder="Nombre">
+          </div>
+          <div class="form-group" style="flex: 1;">
+            <label>Edad</label>
+            <input type="number" name="entry.888888888" placeholder="Ej: 5">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" style="margin-top: 15px;">Enviar Confirmación</button>
+      </div>
+      <div></div>
     </section>
   </form>
 
-  <!-- Iframe oculto para procesar la respuesta en segundo plano -->
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('¡Muchas gracias! Tu respuesta ha sido registrada.');}"></iframe>
 
   <!-- HOJA 8: REGALO / CUENTA BANCARIA -->
   <section class="card" id="regalo">
-    <h2>Luna de Miel</h2>
-    <div class="divider">♡</div>
-    <p class="sub-title">Lo más importante para nosotros es contar con vuestra presencia. Pero si queréis ayudarnos a irnos un poquito más lejos en nuestra luna de miel, aquí os dejamos nuestro número de cuenta:</p>
-    <div class="iban-box">ES05 0182 5332 1500 0012 9391</div>
-    <p style="font-weight: 500;">¡GRACIAS!</p>
+    <div></div>
+    <div class="content-block">
+      <h2>Luna de Miel</h2>
+      <div class="divider">♡</div>
+      <p class="sub-title">Lo más importante para nosotros es contar con vuestra presencia. Pero si queréis ayudarnos a irnos un poquito más lejos en nuestra luna de miel, aquí os dejamos nuestro número de cuenta:</p>
+      <div class="iban-box">ES05 0182 5332 1500 0012 9391</div>
+      <p style="font-weight: 500; font-size: 0.9rem;">¡GRACIAS!</p>
+    </div>
+    <div></div>
   </section>
 
   <!-- HOJA 9: AGRADECIMIENTO -->
   <section class="card" id="gracias">
-    <h2>Gracias</h2>
-    <div class="divider">♡</div>
-    <p class="sub-title">Gracias por formar parte de este día tan especial para nosotros. ¡No podemos esperar para celebrarlo juntos!</p>
+    <div></div>
+    <div class="content-block">
+      <h2>Gracias</h2>
+      <div class="divider">♡</div>
+      <p class="sub-title">Gracias por formar parte de este día tan especial para nosotros. ¡No podemos esperar para celebrarlo juntos!</p>
+    </div>
+    <div></div>
   </section>
 
   <!-- BARRA DE NAVEGACIÓN FIJA INFERIOR -->
@@ -401,11 +443,8 @@
     <a href="#regalo" class="nav-item"><span>🎁</span>Regalo</a>
   </nav>
 
-  <!-- SCRIPT CUENTA ATRÁS -->
   <script>
     var submitted = false;
-
-    // Fecha de la boda: 1 de Noviembre de 2026
     const weddingDate = new Date(2026, 10, 1, 13, 30, 0).getTime();
 
     const timer = setInterval(function() {
