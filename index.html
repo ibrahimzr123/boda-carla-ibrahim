@@ -38,7 +38,7 @@
       padding-bottom: 70px;
     }
 
-    /* TARJETAS / SECCIONES CON AJUSTE DE IMAGEN */
+    /* TARJETAS / SECCIONES CON EL MISMO FONDO */
     .card {
       min-height: 100vh;
       width: 100%;
@@ -51,22 +51,12 @@
       position: relative;
       border-bottom: 1px solid #f0e6d8;
 
-      /* FORZAR ACTUALIZACIÓN Y AJUSTE */
+      /* IMAGEN ÚNICA PARA TODAS LAS SECCIONES */
+      background-image: url('fondo1.png?v=4');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
     }
-
-    /* ASIGNACIÓN DE LAS IMÁGENES CON TRUCO DE RECARGA EN CACHÉ (?v=3) */
-    #inicio     { background-image: url('fondo1.png?v=3'); }
-    #contador   { background-image: url('fondo2.png?v=3'); }
-    #ubicacion  { background-image: url('fondo3.png?v=3'); }
-    #horario    { background-image: url('fondo4.png?v=3'); }
-    #asistencia { background-image: url('fondo5.png?v=3'); }
-    #alergias   { background-image: url('fondo6.png?v=3'); }
-    #ninos      { background-image: url('fondo7.png?v=3'); }
-    #regalo     { background-image: url('fondo8.png?v=3'); }
-    #gracias    { background-image: url('fondo9.png?v=3'); }
 
     /* BLOQUE CONTENEDOR CENTRAL */
     .content-block {
@@ -162,7 +152,7 @@
       color: var(--text-light);
     }
 
-    /* CAJONES DE FORMULARIO BIEN ENCUADRADOS */
+    /* CAJONES DE FORMULARIO */
     form {
       width: 100%;
     }
