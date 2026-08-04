@@ -38,47 +38,47 @@
       padding-bottom: 70px;
     }
 
-    /* TARJETAS/SECCIONES PERFECTAMENTE ENCUADRADAS */
+    /* TARJETAS / SECCIONES CON AJUSTE DE IMAGEN */
     .card {
       min-height: 100vh;
       width: 100%;
-      padding: 50px 20px 80px 20px;
+      padding: 60px 20px 80px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between; /* Reparte el espacio verticalmente */
+      justify-content: space-between;
       text-align: center;
       position: relative;
       border-bottom: 1px solid #f0e6d8;
 
-      /* AJUSTE PROFESIONAL DE FONDO (Sin deformar) */
+      /* FORZAR ACTUALIZACIÓN Y AJUSTE */
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
     }
 
-    /* ASIGNACIÓN DE LAS 9 IMÁGENES */
-    #inicio     { background-image: url('fondo1.png'); }
-    #contador   { background-image: url('fondo2.png'); }
-    #ubicacion  { background-image: url('fondo3.png'); }
-    #horario    { background-image: url('fondo4.png'); }
-    #asistencia { background-image: url('fondo5.png'); }
-    #alergias   { background-image: url('fondo6.png'); }
-    #ninos      { background-image: url('fondo7.png'); }
-    #regalo     { background-image: url('fondo8.png'); }
-    #gracias    { background-image: url('fondo9.png'); }
+    /* ASIGNACIÓN DE LAS IMÁGENES CON TRUCO DE RECARGA EN CACHÉ (?v=3) */
+    #inicio     { background-image: url('fondo1.png?v=3'); }
+    #contador   { background-image: url('fondo2.png?v=3'); }
+    #ubicacion  { background-image: url('fondo3.png?v=3'); }
+    #horario    { background-image: url('fondo4.png?v=3'); }
+    #asistencia { background-image: url('fondo5.png?v=3'); }
+    #alergias   { background-image: url('fondo6.png?v=3'); }
+    #ninos      { background-image: url('fondo7.png?v=3'); }
+    #regalo     { background-image: url('fondo8.png?v=3'); }
+    #gracias    { background-image: url('fondo9.png?v=3'); }
 
-    /* BLOQUE CONTENEDOR PARA CENTRAR TEXTOS Y FORMULARIOS */
+    /* BLOQUE CONTENEDOR CENTRAL */
     .content-block {
       width: 100%;
       max-width: 320px;
-      margin: auto 0; /* Centrado vertical automático */
+      margin: auto 0;
     }
 
     /* FUENTES Y TÍTULOS */
     h1 {
       font-family: 'Alex Brush', cursive;
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: normal;
       color: #4a443f;
       margin: 8px 0;
@@ -86,7 +86,7 @@
 
     h2 {
       font-family: 'Alex Brush', cursive;
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       font-weight: normal;
       color: #5c524a;
       margin-bottom: 8px;
@@ -260,17 +260,24 @@
 </head>
 <body>
 
-  <!-- HOJA 1: PORTADA -->
+  <!-- HOJA 1: PORTADA REORGANIZADA -->
   <section class="card" id="inicio">
-    <div></div>
-    <div class="content-block">
+    <!-- ARRIBA DEL TODO -->
+    <div style="width: 100%; margin-top: 10px;">
       <h2>Nos Casamos</h2>
       <div class="divider">♡</div>
-      <h1>Carla & Ibrahim</h1>
-      <p style="font-size: 1rem; margin-top: 8px;">1 de Noviembre 2026</p>
-      <p style="color: var(--text-light); font-size: 0.85rem;">Dolce Lola, Torre del Mar</p>
     </div>
-    <div></div>
+
+    <!-- CENTRO -->
+    <div class="content-block">
+      <h1>Carla & Ibrahim</h1>
+    </div>
+
+    <!-- ABAJO DEL TODO -->
+    <div style="width: 100%; margin-bottom: 10px;">
+      <p style="font-size: 1.1rem; font-weight: 500; color: var(--text-color);">1 de Noviembre 2026</p>
+      <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 4px;">Dolce Lola, Torre del Mar</p>
+    </div>
   </section>
 
   <!-- HOJA 2: CUENTA ATRÁS -->
